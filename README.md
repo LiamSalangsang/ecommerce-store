@@ -1,3 +1,9 @@
+## Ecommerce Store
+The aim of this project is to enhance my front-end skills and improve as a software developer involving project strucuture, react hooks, ternary operators, use of packages and ui libraries. I also tried to follow the heuristics of a user-centric web application.
+
+Main Programming Skills Found in this Project:
+-   TailWind CSS
+-   React.js
 
 1. Clone Repository
 ```bash
