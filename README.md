@@ -11,8 +11,11 @@
    ## Shopping Cart Page
    ![Screenshot from 2023-12-22 13-40-17](https://github.com/LiamSalangsang/ecommerce-store/assets/125850353/7ced21a7-f2e7-48df-b5a7-f0a3f4b62d8d)
 
-
 ```bash
 git clone https://github.com/username/repo.git
+```
+
 ```bash
 cd repo
+```
+
