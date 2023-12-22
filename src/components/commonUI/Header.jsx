@@ -3,7 +3,7 @@ import Logo from "../Logo";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import NavBar from "./NavBar";
-import toast, { Toaster } from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 import { FaCartShopping } from "react-icons/fa6";
 import { CgProfile } from "react-icons/cg";
 
