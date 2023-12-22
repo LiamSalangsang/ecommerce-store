@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 
-const SummaryCard = ({ total, cart, discount }) => {
-  const totally = cart.reduce(
+const SummaryCard = ({cart}) => {
+  const totalCost = cart.reduce(
     (sum, item) =>
       sum +
       (item.deals[0]
@@ -9,7 +9,7 @@ const SummaryCard = ({ total, cart, discount }) => {
         : item.price * item.quantity),
     0
   );
-  const discounty = cart.reduce(
+  const totalDiscount = cart.reduce(
     (totaldiscount, item) =>
       totaldiscount +
       (item.deals[0] &&
@@ -37,11 +37,11 @@ const SummaryCard = ({ total, cart, discount }) => {
         Shipping Cost: TBD
       </div>
       <div className="text-gray-500 text-lg">
-        Discount: -${discounty.toFixed(2)}
+        Discount: -${totalDiscount.toFixed(2)}
       </div>
       <div className="text-gray-500 text-lg">Tax: TBD</div>
       <div className=" text-bold text-xl">
-        Estimated Total ${totally.toFixed(2)}
+        Estimated Total ${totalCost.toFixed(2)}
       </div>
       <div className="cursor-pointer bg-black/80 w-full h-[2.5rem] text-white hover:text-black hover:bg-gray-200 duration-50 ease-in flex justify-center items-center">
         Begin Checkout

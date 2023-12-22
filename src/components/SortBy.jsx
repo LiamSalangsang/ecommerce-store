@@ -1,23 +1,13 @@
 import * as React from "react";
 import TextField from "@mui/material/TextField";
 import Autocomplete from "@mui/material/Autocomplete";
-import { alphabetize } from "../../public/helper";
-import { Reducer } from "react";
 
-export default function SortBy({ subOption }) {
+export default function SortBy({ sortOptionSet }) {
   const handleSelect = (e, value) => {
     if (value == null) {
-      subOption("");
-      // sub({
-      //   type: 'change_none'
-      // })
+      sortOptionSet("");
     } else {
-      console.log(value.label);
-      subOption(value.label);
-
-      // sub({
-      //   type: value.label
-      // })
+      sortOptionSet(value.label);
     }
   };
 

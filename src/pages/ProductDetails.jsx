@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { useParams } from "react-router-dom";
 import { productsContext } from "../components/context";
 import Header from "../components/commonUI/Header";
-import { Rating, alpha } from "@mui/material";
+import { Rating } from "@mui/material";
 import toast from "react-hot-toast";
 
 const ProductDetails = () => {
@@ -10,7 +10,6 @@ const ProductDetails = () => {
   const { products, cartProducts } = useContext(productsContext);
 
   const thisProduct = products.find((item) => item.id === parseInt(id));
-  console.log("thisProduct", thisProduct);
 
   function addToCart() {
     const isItemAlreadyInCart = cartProducts.some(
@@ -19,14 +18,9 @@ const ProductDetails = () => {
 
     if (isItemAlreadyInCart) {
       toast.error("Already Added to Cart");
-      const indexOfProduct = cartProducts.findIndex(
-        (item) => item.id == thisProduct.id
-      );
-
-      cartProducts[indexOfProduct].quantity = 1;
     } else {
-      toast.success("Added to Cart");
       cartProducts.push({ ...thisProduct, quantity: 1 });
+      toast.success("Added to Cart");
     }
   }
 

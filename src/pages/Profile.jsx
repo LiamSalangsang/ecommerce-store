@@ -3,7 +3,6 @@ import React from "react";
 import Header from "../components/commonUI/Header";
 
 const Profile = () => {
-  // Dummy user data (replace with actual user data from your application)
   const user = {
     id: 1,
     username: "JohnDoe",

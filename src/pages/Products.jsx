@@ -6,8 +6,6 @@ import SearchInput from "../components/SearchInput";
 import Header from "../components/commonUI/Header";
 import SortBy from "../components/SortBy";
 import { alphabetize } from "../../public/helper";
-import { SettingsEthernet } from "@mui/icons-material";
-import { tabClasses } from "@mui/material";
 
 const Products = () => {
   const { products, categories } = useContext(productsContext);
@@ -17,15 +15,12 @@ const Products = () => {
   const [filterProducts, setFilterProducts] = useState([]);
 
   const findTheCategory = useCallback(() => {
-    setSelectedCategory(categories.find((x) => x.id == categoryid));
+    setSelectedCategory(categories.find((group) => group.id == categoryid));
   }, [categoryid, categories]);
 
   useEffect(() => {
-    findTheCategory();
-  }, [findTheCategory]);
-
-  useEffect(() => {
     optionSetter();
+    findTheCategory()
   }, [sortOption, filterProducts, findTheCategory]);
 
   function optionSetter() {
@@ -81,7 +76,7 @@ const Products = () => {
               </h1>
               <div className="mt-10 flex gap-6 justify-center items-center">
                 <SearchInput />
-                <SortBy subOption={setSortOption} />
+                <SortBy sortOptionSet={setSortOption} />
               </div>
               <div className="flex justify-center">
                 <section className="flex flex-wrap w-[63%] justify-start mt-6">
