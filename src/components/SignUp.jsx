@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,} from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 
@@ -16,13 +16,11 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Handle form submission logic here
     console.log("Form submitted:", formData);
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-    console.log(e.target);
     setFormData((prevData) => ({ ...prevData, [name]: value }));
   };
 

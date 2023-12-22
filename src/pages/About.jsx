@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../components/commonUI/Header";
 import { motion } from "framer-motion";
+import Footer from "../components/commonUI/Footer";
 
 const About = () => {
   return (
@@ -53,6 +54,9 @@ const About = () => {
           </div>
         </div>
       </div>
+        <div>
+        <div className="fixed bottom-0 w-full"><Footer/></div>
+     </div>
     </>
   );
 };

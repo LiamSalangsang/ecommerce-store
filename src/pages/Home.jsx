@@ -7,6 +7,8 @@ import Header from "../components/commonUI/Header";
 import { FaArrowLeft } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Footer from "../components/commonUI/Footer";
+import Marquee from "react-fast-marquee";
+import { WidthFull } from "@mui/icons-material";
 
 const Home = () => {
   const { discover } = useParams();
@@ -23,13 +25,13 @@ const Home = () => {
     (currentIndex + 1) * itemsPerSlide
   );
 
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-    }, 5000);
+  // useEffect(() => {
+  //   const intervalId = setInterval(() => {
+  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
+  //   }, 5000);
 
-    return () => clearInterval(intervalId);
-  }, [currentIndex, totalSlides]);
+  //   return () => clearInterval(intervalId);
+  // }, [currentIndex, totalSlides]);
 
   return (
     <>
@@ -78,19 +80,19 @@ const Home = () => {
             </div>
 
             <h2 className="text-2xl">Featured Deals</h2>
-            <div className="flex justify-center w-full ">
-              <div className="grid grid-cols-3 w-[50%] bg-black/20 p-4 rounded-2xl">
-                {visibleObjects.map((item) => (
-                  <motion.div
-                    className="p-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    viewport={{ once: true }}
-                  >
-                    <ProductCard key={item.id} item={item} deal={item.deals} />
-                  </motion.div>
-                ))}
-              </div>
+            <div className="flex justify-center w-full">
+    
+                <div className="bg-black/20 rounded-md w-[50rem] ">
+                  <Marquee speed = {65} pauseOnHover={true}>
+                    {visibleObjects.map((item) => (
+                      <div
+                      className="w-full"
+                      >
+                        <ProductCard key={item.id} item={item} deal={item.deals} />
+                      </div>
+                    ))}
+                  </Marquee>
+                </div>
             </div>
 
             <Link to="/userauth/signup">
@@ -100,30 +102,36 @@ const Home = () => {
             </Link>
             <p>Don't miss out on exclusive offers and updates. Sign up now!</p>
           </div>
+          <Footer />
         </div>
+        
       ) : null}
       {discover ? (
-        <div className="w-full  flex justify-center ">
-          <div className="[90%]">
-            <div className=" text-6xl pt-[7rem] text-center uppercase font-bold">
-              Discover
-            </div>
-
-            <div className="m-4 grid grid-cols-3">
-              {categories.map((group) => {
-                return (
-                  <div className="p-4" key={group.id}>
-                    <Link to={`/products/${group.id}`}>
-                      <CategoryCard details={group} />
-                    </Link>
-                  </div>
-                );
-              })}
+        <div>
+          <div className="w-full  flex justify-center ">
+            <div className="[90%]">
+              <div className=" text-6xl pt-[7rem] text-center uppercase font-bold">
+                Discover
+              </div>
+              <div className="m-4 grid grid-cols-3">
+                {categories.map((group) => {
+                  return (
+                    <div className="p-4" key={group.id}>
+                      <Link to={`/products/${group.id}`}>
+                        <CategoryCard details={group} />
+                      </Link>
+                    </div>
+                  );
+                })}
+              </div>
             </div>
           </div>
+            <div className = 'fixed bottom-0 w-full'>
+              <Footer />
+            </div>
         </div>
       ) : null}
-      <Footer />
+     
     </>
   );
 };

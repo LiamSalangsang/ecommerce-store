@@ -11,8 +11,7 @@ export default function QuantityButton({ thisItem, cart }) {
 
   const handleChange = (event) => {
     thisItem.quantity = event.target.value;
-    setQuantity(event.target.value);
-    handleQuantityChange(thisItem, event.target.value);
+    setQuantity(event.target.value);handleQuantityChange(thisItem, event.target.value);
   };
 
   return (

@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import React from "react";
 import Header from "../components/commonUI/Header";
+import Footer from "../components/commonUI/Footer";
 
 const Profile = () => {
   const user = {
@@ -82,6 +83,9 @@ const Profile = () => {
           </div>
         </motion.div>
       </div>
+      <div>
+        <div className="fixed bottom-0 w-full"><Footer/></div>
+     </div>
     </>
   );
 };

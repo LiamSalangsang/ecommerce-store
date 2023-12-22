@@ -1,29 +1,14 @@
-import React, { useState, useEffect, useContext, createContext } from "react";
+import React, { useContext, createContext } from "react";
 import Header from "../components/commonUI/Header";
 import { productsContext } from "../components/context";
 import ShoppingCartItem from "../components/ShoppingCartItem";
 import SummaryCard from "../components/SummaryCard";
+import Footer from '../components/commonUI/Footer'
 
 export const cartContext = createContext();
 
 const Cart = () => {
   const { cartProducts } = useContext(productsContext);
-  const discount = cartProducts.reduce(
-    (totaldiscount, item) =>
-      totaldiscount +
-      (item.deals[0] &&
-        item.price * item.quantity -
-          (item.deals[0] && item.deals[1] * item.quantity)),
-    0
-  );
-  const sum = cartProducts.reduce(
-    (total, currentItem) =>
-      total +
-      (currentItem.deals &&
-        (currentItem.deals[0] ? currentItem.deals[1] : currentItem.price)) *
-        currentItem.quantity,
-    0
-  );
   const [updatedCart, setUpdatedCart] = React.useState(cartProducts);
 
   function handleQuantityChange(singleItem, updatedQuantity) {
@@ -59,6 +44,8 @@ const Cart = () => {
           </div>
         </div>
       </div>
+      <div>
+     </div>
     </>
   );
 };

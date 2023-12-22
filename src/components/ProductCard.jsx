@@ -5,7 +5,7 @@ import CardMedia from "@mui/material/CardMedia";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import Rating from "@mui/material/Rating";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { searchContext } from "./context";
 import { motion } from "framer-motion";
 
