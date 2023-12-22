@@ -69,17 +69,20 @@ const Products = () => {
         <div className="text-center flex flex-col justify-center ">
           {filterProducts ? (
             <>
-              <h1 className="pt-[7rem] font-bold uppercase text-6xl text-center">
+              <h1 className="pt-[7rem] font-bold uppercase md:text-6xl text-4xl text-center">
                 {categoryid
                   ? `${selectedCategory ? selectedCategory.name : ""}`
                   : "SHOP ALL"}
               </h1>
-              <div className="mt-10 flex gap-6 justify-center items-center">
-                <SearchInput />
+              <div className="mt-8 flex gap-4 justify-center items-center">
+                <div className="w-[10rem]">
+                  <SearchInput />
+                </div>
+           
                 <SortBy sortOptionSet={setSortOption} />
               </div>
               <div className="flex justify-center">
-                <section className="flex flex-wrap w-[63%] justify-start mt-6">
+                <section className="flex flex-wrap md:w-[80%] justify-center mt-6">
                   {categoryid
                     ? filterProducts
                         .filter(

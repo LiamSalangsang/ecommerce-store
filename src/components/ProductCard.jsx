@@ -15,23 +15,17 @@ export default function ProductCard({ item, deal = [false, 0.0] }) {
   return (
     item.name.toLowerCase().includes(searchValue.toLowerCase()) && (
       <motion.div
-        className="p-4"
+        className="m-4"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}
       >
         <Link to={`/products/${item.category_id}/${item.id}`} key={item.id}>
           <Card
-            sx={{
-              minHeight: "12rem",
-              maxHeight: "13rem",
-              maxWidth: "14rem",
-              minWidth: "14rem",
-              borderRadius: 5,
-            }}
+            className="md:max-h-[12rem] md:max-w-[14rem] md:min-h-[12rem] md:min-w-[14rem] rounded-lg max-h-[10rem] max-w-[10rem] min-h-[10rem] min-w-[10rem]"
           >
             <CardActionArea>
-              <div className=" flex max-h-[5.5rem] object-cover">
+              <div className=" flex max-h-[5.5rem]">
                 <CardMedia
                   component="img"
                   className=" object-cover"
@@ -40,11 +34,11 @@ export default function ProductCard({ item, deal = [false, 0.0] }) {
                 />
               </div>
               <CardContent>
-                <Typography gutterBottom variant="h7" component="div">
+                <div className=" md:text-[0.9rem] line-clamp-1 text-[0.7rem]  w-full">
                   {item.name}
-                </Typography>
-                <div className="text-gray-600 w-[100%] text-[0.7rem]">
-                  {item.description.split(" ").slice(0, 3).join(" ")}...
+                </div>
+                <div className="text-gray-600 md:line-clamp-1 hidden md:block min-h-[2rem] md:text-[0.9rem] ">
+                  {item.description}
                 </div>
 
                 <div>
@@ -53,14 +47,15 @@ export default function ProductCard({ item, deal = [false, 0.0] }) {
                     variant="body2"
                     color="text.secondary"
                   >
-                    <Rating
-                      className="absolute bottom-0"
-                      name="read-only"
-                      value={item.rating}
-                      precision={0.2}
-                      readOnly
-                    />
-                    <span className="items-center">{item.rating}/5.0</span>
+                
+                      <Rating
+                      size ={"small"}
+                        name="read-only"
+                        value={item.rating}
+                        precision={0.2}
+                        readOnly
+                      />
+                    <span className="items-center ">{item.rating}/5.0</span>
                   </Typography>
                 </div>
                 {deal[0] ? (

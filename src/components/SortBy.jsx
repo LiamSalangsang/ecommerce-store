@@ -17,7 +17,7 @@ export default function SortBy({ sortOptionSet }) {
       id="combo-box-demo"
       options={sortingOptions}
       onChange={handleSelect}
-      sx={{ width: 200 }}
+      className="w-[10rem]"
       renderInput={(params) => <TextField {...params} label="Sort By" />}
     />
   );

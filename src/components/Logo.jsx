@@ -101,7 +101,7 @@ const Logo = () => {
         </motion.svg>
       </Link>
       <Link
-        className="group-hover:text-purple-700 duration-200 ease-in font-bold text-[3rem] "
+        className="group-hover:text-purple-700 duration-200 ease-in font-bold text-[3rem] hidden lg:block "
         to="/"
       >
         TechVerse

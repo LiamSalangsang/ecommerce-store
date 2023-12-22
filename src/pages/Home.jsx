@@ -23,10 +23,10 @@ const Home = () => {
         <div>
           <div>
             <div className="w-full h-screen flex ">
-              <div className="w-[50%] flex gap-4 justify-center flex-col items-center">
+              <div className="md:w-[50%] w-full flex gap-4 justify-center flex-col items-center">
                 <h2 className="text-2xl">TechVerse</h2>
                 <motion.h3
-                  className="w-[70%] text-gray-800 text-lg text-center"
+                  className="md:w-[70%] text-gray-800 text-md md:text-lg text-center w-full"
                   initial={{ x: -400 }}
                   animate={{ x: 0 }}
                   transition={{ duration: 1 }}
@@ -79,11 +79,9 @@ const Home = () => {
             </div>
 
             <Link to="/userauth/signup">
-              <h2 className="hover:text-white duration-200 ease-in-out w-[7rem]">
-                Sign Up Now
-              </h2>
+           
             </Link>
-            <p>Don't miss out on exclusive offers and updates. Sign up now!</p>
+            <p>Don't miss out on exclusive offers and updates. <span className="hover:text-purple-200 hover:cursor-pointer duration-100 ease-in-out w-[7rem] text-md">Sign up now!</span></p>
           </div>
           <Footer />
         </div>
@@ -93,7 +91,7 @@ const Home = () => {
         <div>
           <div className="w-full  flex justify-center ">
             <div className="[90%]">
-              <div className=" text-6xl pt-[7rem] text-center uppercase font-bold">
+              <div className=" md:text-6xl text-4xl pt-[7rem] text-center uppercase font-bold">
                 Discover
               </div>
               <div className="m-4 grid grid-cols-3">

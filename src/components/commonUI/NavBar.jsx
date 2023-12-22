@@ -1,37 +1,62 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 
 const NavBar = () => {
+
   return (
     <>
-      <section className="flex w-[100%] gap-[5rem] justify-center">
-        <Link
-          className="hover:text-purple-700 duration-100 ease-in text-xl font-[600] "
+      <nav className="flex w-[100%] md:gap-[5rem] gap-2 justify-center">
+        <NavLink
+  
+          className= {({isActive})=>isActive?("hover:text-purple-700 duration-100 ease-in md:text-xl md:font-[600] text-purple-700"):("hover:text-purple-700 duration-100  ease-in md:text-xl md:font-[600]")}
           to="/discover"
         >
           Categories
-        </Link>
-        <Link
-          className="hover:text-purple-700 duration-100 ease-in text-xl font-[600]"
+        </NavLink>
+        <NavLink
+          className={({isActive})=>isActive?("hover:text-purple-700 duration-100 ease-in md:text-xl md:font-[600] text-purple-700"):("hover:text-purple-700 duration-100  ease-in md:text-xl md:font-[600]")}
           to="/products"
         >
           Shop
-        </Link>
-        <Link
-          className="hover:text-purple-700 duration-100 ease-in text-xl font-[600]"
+        </NavLink>
+        <NavLink
+          className={`hover:text-purple-700 duration-100 ease-in md:text-xl md:font-[600] ${
+            window.location.pathname === "/about" ? "text-purple-700" : ""
+          }`}
           to="/about"
         >
           About
-        </Link>
-        <Link
-          className="hover:text-purple-700 duration-100 ease-in text-xl font-[600]"
-          to="/userauth/login"
+        </NavLink>
+        <NavLink
+          className={({isActive})=>isActive?("hover:text-purple-700 duration-100 ease-in md:text-xl md:font-[600] text-purple-700"):("hover:text-purple-700 duration-100  ease-in md:text-xl md:font-[600]")}
+          to="/userauth/signin"
         >
           Sign In
-        </Link>
-      </section>
+        </NavLink>
+      </nav>
     </>
   );
 };
+
+// const StyleSheet.create() ={
+
+//   activeLink: {
+//     backgroundColor:"cyan",
+//     color:"black",
+//     fontSize: "20px",
+//     padding:'1rem',
+//     textDecoration:"none"
+//   },
+
+//   defaultLink:{
+//   padding:'1rem',
+//   color:"black",
+//   fontSize: "20px",
+//   textDecoration:"none",
+
+//   },
+
+// }
 
 export default NavBar;

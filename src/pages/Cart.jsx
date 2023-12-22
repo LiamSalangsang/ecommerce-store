@@ -18,33 +18,36 @@ const Cart = () => {
     setUpdatedCart(updatedCopy);
   }
 
+  console.log(updatedCart)
+
   return (
     <>
       <Header />
       <div>
-        <div className="pt-[7rem] text-center font-bold uppercase text-6xl">
-          {" "}
+        <div className="pt-[7rem] text-center font-bold uppercase text-4xl md:text-6xl">
           My Shopping Cart
         </div>
-        <div className="flex">
-          <cartContext.Provider value={{ handleQuantityChange, updatedCart }}>
-            <div className="flex items-center flex-col min-w-[60%]">
-              {cartProducts.map((item) => {
-                return (
-                  <div>
-                    <ShoppingCartItem item={item} />
-                  </div>
-                );
-              })}
-            </div>
-          </cartContext.Provider>
-          <div>
+        <div className="md:flex">
+          <div className="min-h-[10rem] w-[60%]">
+            <cartContext.Provider value={{ handleQuantityChange, updatedCart }}>
+              {cartProducts ? (
+                <div className="flex items-center flex-col ml-4 min-w-[60%] ">
+                  {cartProducts.map((item) => (
+                    <div className= ' md:flex md:justify-center  w-full  ' key={item.id}>
+                      <ShoppingCartItem item={item} />
+                    </div>
+                  ))}
+                </div>
+              ) :null}
+            </cartContext.Provider>
+          </div>
+          {updatedCart.length ==0 &&<div className="absolute md:top-[50%] md:left-[30%] top-[30%] left-[50%] translate-x-[-50%]"><span>No Items In Cart</span></div>}
+          <div className="flex justify-center ">
             <SummaryCard cart={updatedCart} />
           </div>
         </div>
       </div>
-      <div>
-     </div>
+      <div></div>
     </>
   );
 };

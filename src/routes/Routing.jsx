@@ -8,6 +8,7 @@ import Cart from "../pages/Cart";
 import SignUp from "../components/SignUp";
 import About from "../pages/About";
 import Login from "../components/Login";
+import UserAuth from "../pages/UserAuth";
 
 const Routing = () => {
   return (
@@ -18,11 +19,11 @@ const Routing = () => {
       <Route path="/products/:categoryid" element={<Products />} />
       <Route path="/products/:categoryid/:id" element={<ProductDetails />} />
       <Route path="/profile" element={<Profile />} />
-
-      <Route path="/userauth/signup" element={<SignUp />} />
+      <Route path="/userauth/" element={<UserAuth/>} />
+      <Route path="/userauth/:useReg" element={<UserAuth/>} />
       <Route path="/shopcart" element={<Cart />} />
       <Route path="/about" element={<About />} />
-      <Route path="/userauth/login" element={<Login />} />
+      <Route path="/userauth/:useReg" element={<UserAuth />} />
     </Routes>
   );
 };

@@ -27,13 +27,11 @@ const Login = () => {
 
   return (
     <>
-      <span className=" absolute top-40 left-[10rem] md:top-0 md:left-[0] text-4xl font-bold ">
-        {" "}
-        Login
-      </span>
-
       <div className="flex">
-        <section className="w-[100%] md:w-[65%] flex justify-center h-[100vh] items-center ">
+      <section className="w-[100%] md:w-[65%] flex flex-col gap-4 justify-center h-[100vh] items-center ">
+      <span className=" text-center text-4xl font-bold ">
+        Login 
+      </span>
           <form className="w-[17rem]" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="name">Name:</label>
@@ -86,9 +84,9 @@ const Login = () => {
               </button>
             </div>
 
-            <div className="w-full text-right">
+            <div className="w-full text-right p-2 ">
               {/* <button style = {gradientStyle} className = "hover:bg-red-50" type="submit">Sign Up</button> */}
-              <Link to="/">Navigate</Link>
+              <Link className = " bg-purple-300 p-2 rounded-full hover:bg-purple-500 hover:text-white" to="/">Sign in</Link>
             </div>
             <div className="text-[0.75rem]">
               {" "}

@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../Logo";
 import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import NavBar from "./NavBar";
 import { Toaster } from "react-hot-toast";
 import { FaCartShopping } from "react-icons/fa6";
@@ -13,7 +13,6 @@ const Header = () => {
       <Logo />
       <Toaster
         toastOptions={{
-          // Define default options
           duration: 1500,
           style: {
             background: "#363636",
@@ -24,16 +23,26 @@ const Header = () => {
 
       <NavBar />
       <div className="flex items-center">
-        <Link
-          className="hover:text-purple-700 duration-100 ease-in "
+        <NavLink
+          className="group/profile hover:text-purple-700 duration-100 ease-in "
           to="/profile"
         >
-          <CgProfile className="text-[1.75rem]" />
-        </Link>
+          <CgProfile
+            className={`group-hover/profile:text-purple-700 ease-in text-[1.75rem] ${
+              window.location.pathname === "/profile" ? "text-purple-700" : null
+            }`}
+          />
+        </NavLink>
 
-        <Link className="group/cart p-4 pr-8" to="/shopcart">
-          <FaCartShopping className="group-hover/cart:text-purple-700 duration-200 ease-in text-[1.75rem]" />
-        </Link>
+        <NavLink className={`group/cart p-4 pr-8`} to="/shopcart">
+          <FaCartShopping
+            className={`group-hover/cart:text-purple-700 duration-100 ease-in text-[1.75rem] ${
+              window.location.pathname === "/shopcart"
+                ? "text-purple-700"
+                : null
+            }`}
+          />
+        </NavLink>
       </div>
     </motion.div>
   );

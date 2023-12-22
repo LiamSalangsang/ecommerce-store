@@ -28,8 +28,8 @@ const ProductDetails = () => {
     <>
       <Header />
       {thisProduct ? (
-        <main className="h-screen flex gap-[12rem] justify-center items-center ">
-          <div className=" min-w-[25rem] max-w-[30rem] ">
+        <main className="h-screen  md:flex-row flex flex-col md:gap-[12rem] justify-center items-center ">
+          <div className=" md:min-w-[25rem] md:max-w-[30rem]  min-w-[15rem] max-w-[20rem]">
             <img className="object-cover " src={thisProduct.image} alt="" />
           </div>
           <div>
