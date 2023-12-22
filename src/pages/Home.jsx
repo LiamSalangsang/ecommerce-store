@@ -8,7 +8,6 @@ import { FaArrowLeft } from "react-icons/fa6";
 import { motion } from "framer-motion";
 import Footer from "../components/commonUI/Footer";
 import Marquee from "react-fast-marquee";
-import { WidthFull } from "@mui/icons-material";
 
 const Home = () => {
   const { discover } = useParams();
@@ -16,22 +15,6 @@ const Home = () => {
   const dealProducts = products.filter(
     (item) => "deals" in item && item.deals[0]
   );
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const itemsPerSlide = 3;
-  const totalSlides = Math.ceil(dealProducts.length / itemsPerSlide);
-
-  const visibleObjects = dealProducts.slice(
-    currentIndex * itemsPerSlide,
-    (currentIndex + 1) * itemsPerSlide
-  );
-
-  // useEffect(() => {
-  //   const intervalId = setInterval(() => {
-  //     setCurrentIndex((prevIndex) => (prevIndex + 1) % totalSlides);
-  //   }, 5000);
-
-  //   return () => clearInterval(intervalId);
-  // }, [currentIndex, totalSlides]);
 
   return (
     <>
@@ -84,7 +67,7 @@ const Home = () => {
     
                 <div className="bg-black/20 rounded-md w-[50rem] ">
                   <Marquee speed = {65} pauseOnHover={true}>
-                    {visibleObjects.map((item) => (
+                    {dealProducts.map((item) => (
                       <div
                       className="w-full"
                       >

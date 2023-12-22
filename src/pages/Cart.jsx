@@ -3,7 +3,6 @@ import Header from "../components/commonUI/Header";
 import { productsContext } from "../components/context";
 import ShoppingCartItem from "../components/ShoppingCartItem";
 import SummaryCard from "../components/SummaryCard";
-import Footer from '../components/commonUI/Footer'
 
 export const cartContext = createContext();
 
