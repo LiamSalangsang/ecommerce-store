@@ -18,16 +18,15 @@ const Products = () => {
 
   const findTheCategory = useCallback(() => {
     setSelectedCategory(categories.find((x) => x.id == categoryid));
-  },[categoryid,categories]);
+  }, [categoryid, categories]);
 
   useEffect(() => {
-    findTheCategory()
+    findTheCategory();
   }, [findTheCategory]);
-
 
   useEffect(() => {
     optionSetter();
-  }, [sortOption, filterProducts,findTheCategory]);
+  }, [sortOption, filterProducts, findTheCategory]);
 
   function optionSetter() {
     switch (sortOption) {

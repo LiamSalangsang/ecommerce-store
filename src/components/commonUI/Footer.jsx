@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Footer = () => {
   return (
@@ -7,10 +7,30 @@ const Footer = () => {
 
       {/* Optional: Add links or navigation in the footer */}
       <nav style={navStyle}>
-        <a className = 'font-bold m-5 hover:text-purple-400 duration-200' href="#">Home</a>
-        <a className = 'font-bold m-5 hover:text-purple-400 duration-200'  href="#">Products</a>
-        <a className = 'font-bold m-5 hover:text-purple-400 duration-200' href="#">About Us</a>
-        <a className = 'font-bold m-5 hover:text-purple-400 duration-200' href="#">Contact</a>
+        <a
+          className="font-bold m-5 hover:text-purple-400 duration-200"
+          href="#"
+        >
+          Home
+        </a>
+        <a
+          className="font-bold m-5 hover:text-purple-400 duration-200"
+          href="#"
+        >
+          Products
+        </a>
+        <a
+          className="font-bold m-5 hover:text-purple-400 duration-200"
+          href="#"
+        >
+          About Us
+        </a>
+        <a
+          className="font-bold m-5 hover:text-purple-400 duration-200"
+          href="#"
+        >
+          Contact
+        </a>
       </nav>
     </footer>
   );
@@ -18,22 +38,18 @@ const Footer = () => {
 
 // Styles
 const footerStyle = {
-  backgroundColor: '#333', // Grey background color
-  color: '#fff', // Text color
-  padding: '20px',
-  textAlign: 'center',
-  
- 
+  backgroundColor: "#333", // Grey background color
+  color: "#fff", // Text color
+  padding: "20px",
+  textAlign: "center",
 };
 
 const copyrightStyle = {
-  margin: '0',
+  margin: "0",
 };
 
 const navStyle = {
-  marginTop: '10px',
+  marginTop: "10px",
 };
-
-
 
 export default Footer;
