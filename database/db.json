@@ -1,0 +1,426 @@
+{
+  "cars": [
+    {
+      "id": 1,
+      "name": "Ferrari F8",
+      "model": "F",
+      "year": "2022",
+      "company": "Company 1",
+      "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/00/2021_Ferrari_F8_Tributo.jpg/800px-2021_Ferrari_F8_Tributo.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Honda Civic",
+      "model": "R",
+      "year": "2023",
+      "company": "Company 2",
+      "image": "https://i0.wp.com/www.ridebuster.com/wp-content/uploads/2022/09/Honda-Civic-Type-R-2023-5.jpeg?resize=770%2C433&ssl=1"
+    },
+    {
+      "id": 3,
+      "name": "Jeep",
+      "model": "Model 3",
+      "year": "2021",
+      "company": "Company 3",
+      "image": "https://images.unsplash.com/photo-1506015391300-4802dc74de2e?q=80&w=1000&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8amVlcHxlbnwwfHwwfHx8MA%3D%3D"
+    },
+    {
+      "id": 4,
+      "name": "Tesla Model S",
+      "model": "S",
+      "year": "2022",
+      "company": "Tesla",
+      "image": "https://media.autoexpress.co.uk/image/private/s--X-WVjvBW--/f_auto,t_content-image-full-desktop@1/v1689934611/autoexpress/2023/07/Tesla%20Model%20S%20Plaid%20001_yujihf.jpg"
+    }
+  ],
+  "customers": [
+    {
+      "id": 1,
+      "carid": 2,
+      "name": "Chan",
+      "email": "chan@yahoo.com",
+      "mobile": "081-234-5678",
+      "address": "299 Charoen Nakhon 5 Alley, Khwaeng Khlong Ton Sai, Khet Khlong San, Krung Thep Maha Nakhon 10600",
+      "profile": "https://img.freepik.com/free-photo/portrait-optimistic-businessman-formalwear_1262-3600.jpg"
+    },
+    {
+      "id": 2,
+      "carid": 3,
+      "name": "Liam",
+      "email": "liam@gmail.com",
+      "mobile": "092-345-6789",
+      "address": "143, South Sathorn Road, Yannawa, Sathorn, 10120, Bangkok, Thailand",
+      "profile": "https://blog-pixomatic.s3.appcnt.com/image/22/01/26/61f166e1377d4/_orig/pixomatic_1572877223091.png"
+    }
+  ],
+  "locations": [
+    {
+      "id": 1,
+      "carid": 2,
+      "latitude": "13.7563",
+      "longitude": "100.5018"
+    },
+    {
+      "id": 2,
+      "carid": 3,
+      "latitude": "13.7351",
+      "longitude": "100.5232"
+    },
+    {
+      "id": 3,
+      "carid": 1,
+      "latitude": "13.7565",
+      "longitude": "100.5013"
+    },
+    {
+      "id": 4,
+      "carid": 5,
+      "latitude": "13.7567",
+      "longitude": "100.5020"
+    }
+  ],
+  "rents": [
+    {
+      "id": 1,
+      "carid": 2,
+      "price": 2000,
+      "startdate": "2023-03-15",
+      "enddate": "2023-03-20"
+    },
+    {
+      "id": 2,
+      "carid": 3,
+      "price": 2500,
+      "startdate": "2023-03-18",
+      "enddate": "2023-03-25"
+    }
+  ],
+  "usersessions": [
+    {
+      "id": 1,
+      "userid": 2,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcmlkIjoiMiIsInVzZXJuYW1lIjoibGlhbSIsImVtYWlsIjoiRUBnbWFpbC5jb20ifQ.pvwlzKTQ6kC66ukA8v8gXxJWC7a7Ix71Ky6-GrmztiY"
+    },
+    {
+      "id": 2,
+      "userid": 1,
+      "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwidXNlcmlkIjoiMSIsInVzZXJuYW1lIjoic2FtIiwiZW1haWwiOiJzYUBnbWFpbC5jb20ifQ.c1ywhqTzFFSVWWpoqVzzcja2fMAa7nIjkGMWIZxHhyQ"
+    }
+  ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Headphones",
+      "images": "https://www.soundspacethai.com/wp-content/uploads/2018/01/sennheiser_hd-4-50btnc_headphone-600x600.jpg"
+    },
+    {
+      "id": 2,
+      "name": "Speakers",
+      "images": "https://www.luluhypermarket.com/cdn-cgi/image/f=auto/medias/1560180-01.jpg-1200Wx1200H?context=bWFzdGVyfGltYWdlc3wyNjA5OTZ8aW1hZ2UvanBlZ3xhVzFoWjJWekwyaGlOUzlvTjJRdmFEQXdMemt5TXpNMU56WTFPVEV6T1RBdWFuQm58YWYxNDEzMDZiNTE3ODgzNGE1N2I4YjEyN2Y4MWY4ZmNhNzc4ZmU3M2FmMjMzYmM5NDRiM2I0YzUwZjA2OTUwMA"
+    },
+    {
+      "id": 3,
+      "name": "Laptops",
+      "images": "https://store.storeimages.cdn-apple.com/8756/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1664472289661"
+    },{
+      "id": 4,
+      "name": "Household",
+      "images": "https://images.logitech.com/smarthome/support/harmony/articles/v4/experience/heros/amazon-echo-glamour-v2.png"
+    },
+    {
+      "id": 5,
+      "name": "Monitor",
+      "images": "https://images.philips.com/is/image/PhilipsConsumer/243V7QDAB_67-IMS-th_TH?$jpglarge$&wid=960"
+    },{
+      "id": 6,
+      "name": "Mice",
+      "images": "data:image/jpeg;base64,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"
+    }
+  ],
+  "products": [
+    {
+      "id": 1,
+      "name": "UltraBook Pro X1",
+      "category_id": 3,
+      "price": 1299.99,
+      "image": "https://www.notebookcheck.net/fileadmin/Notebooks/Infinix/INBook_X1_Pro/inbook46.jpg",
+      "description": "Thin and powerful ultrabook for professionals.",
+      "rating": 4.8,
+      "deals": [false, 0.0],
+      "variants": [
+        {
+          "id": 101,
+          "color": "Silver",
+          "storage": "512GB SSD",
+          "memory": "16GB RAM"
+        },
+        {
+          "id": 102,
+          "color": "Space Gray",
+          "storage": "1TB SSD",
+          "memory": "32GB RAM"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 401,
+          "user": "BusinessUser456",
+          "rating": 4.9,
+          "comment": "Excellent performance and build quality."
+        },
+        {
+          "id": 402,
+          "user": "DigitalNomad",
+          "rating": 4.7,
+          "comment": "Perfect for on-the-go professionals."
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Gaming Beast GX-700",
+      "category_id": 3,
+      "price": 1999.99,
+      "image": "https://cdn.wccftech.com/wp-content/uploads/2015/10/ASUS-ROG-GX700_1-1030x970.jpg",
+      "description": "Ultimate Gaming Laptop For All",
+      "rating": 4.5,
+      "deals": [true, 1799.99],
+      "variants": [
+        {
+          "id": 201,
+          "color": "Black",
+          "GPU": "NVIDIA RTX 3080",
+          "CPU": "Intel i9-10900K"
+        },
+        {
+          "id": 202,
+          "color": "Red",
+          "GPU": "AMD Radeon RX 6800M",
+          "CPU": "AMD Ryzen 9 5900HX"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 403,
+          "user": "GamerX",
+          "rating": 4.8,
+          "comment": "Handles all the latest games with ease."
+        },
+        {
+          "id": 404,
+          "user": "TechGeek",
+          "rating": 4.2,
+          "comment": "Good value for the gaming performance."
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "4K Pro Display",
+      "category_id": 5,
+      "price": 799.99,
+      "image": "https://www.digitaltrends.com/wp-content/uploads/2019/06/apple-pro-display-xdr-hands-on-8.jpg?p=1",
+      "description": "Ultra-high-definition monitor for professional use.",
+      "rating": 4.6,
+      "deals": [false, 0.0],
+      "variants": [
+        {
+          "id": 301,
+          "size": "27 inches",
+          "refresh_rate": "60Hz"
+        },
+        {
+          "id": 302,
+          "size": "32 inches",
+          "refresh_rate": "75Hz"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 501,
+          "user": "Designer123",
+          "rating": 4.7,
+          "comment": "Perfect color accuracy for design work."
+        },
+        {
+          "id": 502,
+          "user": "ContentCreator",
+          "rating": 4.5,
+          "comment": "Great for video editing and content creation."
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Curved Gaming Monitor",
+      "category_id": 5,
+      "price": 549.99,
+      "image": "data:image/jpeg;base64,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",
+      "description": "Immersive gaming monitor with a curved display.",
+      "rating": 4.4,
+      "deals": [true, 499.99],
+      "variants": [
+        {
+          "id": 401,
+          "size": "34 inches",
+          "refresh_rate": "144Hz"
+        },
+        {
+          "id": 402,
+          "size": "27 inches",
+          "refresh_rate": "165Hz"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 503,
+          "user": "GamerPro",
+          "rating": 4.6,
+          "comment": "Immersive gaming experience with the curved display."
+        },
+        {
+          "id": 504,
+          "user": "TechEnthusiast",
+          "rating": 4.3,
+          "comment": "Good value for a high-refresh-rate gaming monitor."
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Bluetooth Headphones",
+      "category_id": 1,
+      "price": 79.99,
+      "image": "https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTlTokkgGfo4dcpA9exvEQHpcbHJC7wammThsal7e3o4vYXO-nqEdz2JgBYH-DS4PCiMxMys2UNT8XGBtUXUAm1FnPdMQyPqmrvxsoN6RTwJCSqiDTdMp2rgiA&usqp=CAE",
+      "description": "Wireless headphones with noise-canceling technology.",
+      "rating": 4.2,
+      "deals": [true, 69.99],
+      "variants": [
+        {
+          "id": 501,
+          "color": "Black",
+          "type": "Over-Ear"
+        },
+        {
+          "id": 502,
+          "color": "White",
+          "type": "In-Ear"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 301,
+          "user": "Audiophile123",
+          "rating": 4.5,
+          "comment": "Great sound quality!"
+        },
+        {
+          "id": 302,
+          "user": "TechEnthusiast",
+          "rating": 4.0,
+          "comment": "Comfortable to wear for long periods."
+        }
+      ]
+    },
+
+    {
+      "id": 6,
+      "name": "Bose Bluetooth Speaker",
+      "category_id": 2,
+      "price": 149.99,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcSIBqxpV4shZoTwaKnC_bv2UhvpVnIoI0dQsO8AW-EUMLgPGYX1eeNkIQ_mvqOF7Ff5NeyM1UuyBRrewiTd7T_sAOVWcv51BaYjTDaFsv5E3obCxr1YDzyfAuJE&usqp=CAE",
+      "description": "Premium Bluetooth speaker for high-quality audio.",
+      "rating": 4.8,
+      "deals": [true, 119.99],
+      "variants": [
+        {
+          "id": 601,
+          "size": "Regular",
+          "color": "Blue"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 303,
+          "user": "Audiophile",
+          "rating": 5,
+          "comment": "Exceptional sound quality!"
+        },
+        {
+          "id": 304,
+          "user": "TechEnthusiast",
+          "rating": 4.5,
+          "comment": "Sleek design and easy to use."
+        }
+      ]
+    },
+
+    {
+      "id": 7,
+      "name": "Robot Vacuum Cleaner",
+      "category_id": 4,
+      "price": 199.99,
+      "image": "https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcS_RA8VeS5MJXbv0xl4Em5A0pRF3HjiSvpDkoJuZ2zfv8FSAtTzUlfsWZUv16z5JMaijBcodWkPdCM7Fkj-7oNBu59lK90gFt8ifAcuytV95rj3jGSnNY92fQ&usqp=CAE",
+      "description": "Smart robot vacuum for hands-free cleaning.",
+      "rating": 4.5,
+      "deals": [true, 149.99],
+      "variants": [
+        {
+          "id": 701,
+          "model": "Standard",
+          "power": "1200W"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 305,
+          "user": "CleanFreak",
+          "rating": 4.8,
+          "comment": "Efficient and easy to use."
+        },
+        {
+          "id": 306,
+          "user": "TechHome",
+          "rating": 4.2,
+          "comment": "Great for maintaining a clean home."
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Smart LED Bulbs",
+      "category_id": 4,
+      "price": 29.99,
+      "image": "https://encrypted-tbn1.gstatic.com/shopping?q=tbn:ANd9GcTQXKSlltm9FTiXV72ymasP1cWoRH4Xxv2hBKQTKFhQN89B7Q50PkmIcVg2fmqhXku-hZu7xI6k7HXHQfw4Suev1NIMbg3PSA&usqp=CAE",
+      "description": "Energy-efficient smart LED bulbs for home automation.",
+      "deals": [false, 0.0],
+      "rating": 3.9,
+      "variants": [
+        {
+          "id": 801,
+          "color": "Warm White",
+          "brightness": "800 lumens"
+        },
+        {
+          "id": 802,
+          "color": "Cool White",
+          "brightness": "1000 lumens"
+        }
+      ],
+      "reviews": [
+        {
+          "id": 307,
+          "user": "GreenLiving",
+          "rating": 3.5,
+          "comment": "Decent bulbs, could be brighter."
+        },
+        {
+          "id": 308,
+          "user": "SmartHomeOwner",
+          "rating": 4.0,
+          "comment": "Easy to integrate with smart home systems."
+        }
+      ]
+    }
+  ]
+}
