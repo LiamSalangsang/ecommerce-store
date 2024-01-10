@@ -5,6 +5,7 @@ import Header from "../components/commonUI/Header";
 import { Rating } from "@mui/material";
 import toast from "react-hot-toast";
 import BreadCrumbs from '../components/BreadCrumbs'
+import axios from "axios";
 
 const ProductDetails = () => {
   const { id } = useParams();
@@ -24,6 +25,30 @@ const ProductDetails = () => {
       toast.success("Added to Cart");
     }
   }
+
+  const addToWishlist=()=>{
+    addItemToWishList()
+
+    toast.success("successfully added to wishlist!")
+  }
+
+  const addItemToWishList = async()=>{
+
+    try {
+      console.log(localStorage.getItem('token'))
+      const item =  await axios.post('http://localhost:3000/api/products',{"id":thisProduct.id, "name": thisProduct.name}, {
+        headers: {
+          Authorization: `Bearer ${localStorage.getItem('token')}`,
+        },
+      })
+      
+      console.log("item", item.data)
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+
 
   return (
     <>
@@ -60,13 +85,23 @@ const ProductDetails = () => {
                </div>
              </div>
              <div>{thisProduct.description}</div>
-             <button
-               onClick={addToCart}
-               className="mt-4 flex items-center gap-4 group/shoplink border-2 border-black p-2  font-bold hover:scale-110 hover:bg-purple-500 duration-200 ease-in"
-             >
-               {" "}
-               Add to Cart{" "}
-             </button>
+             <div className="flex gap-10">
+               <button
+                 onClick={addToWishlist}
+                 className="mt-4 flex items-center group/shoplink border rounded-lg border-black  text-[0.9rem] p-[0.2rem] font-bold hover:scale-110 hover:bg-gray-400 duration-200 ease-in"
+               >
+                 {" "}
+                 Add to Wishlist{" "}
+               </button>
+               <button
+                 onClick={addToCart}
+                 className="mt-4 flex items-center gap-4 group/shoplink border-2 border-black p-2  font-bold hover:scale-110 hover:bg-green-300 duration-200 ease-in"
+               >
+                 {" "}
+                 Add to Cart{" "}
+               </button>
+             </div>
+             
            </div>
          </main>
        </section>

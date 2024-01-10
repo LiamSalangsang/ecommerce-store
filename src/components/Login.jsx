@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
+
 
 const Login = () => {
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -16,8 +21,30 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
+      loginUser()
+      
   };
+
+
+  const loginUser= async()=>{
+
+    try {
+      
+      const data = await axios.post(`http://localhost:3000/auth/login`, 
+      formData
+      , {
+        headers: {
+          'Content-Type': 'application/x-www-form-urlencoded'
+        }
+    })
+    localStorage.setItem('token', data.data.access_token)
+    navigate('/')
+      
+  } catch (error) {
+    toast.error("name, email or password is incorrect")
+    console.log(error)
+  }
+  }
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,6 +54,7 @@ const Login = () => {
 
   return (
     <>
+    <Toaster/>
       <div className="flex">
       <section className="w-[100%] md:w-[65%] flex flex-col gap-4 justify-center h-[100vh] items-center ">
       <span className=" text-center text-4xl font-bold ">
@@ -56,7 +84,7 @@ const Login = () => {
                 onChange={handleChange}
                 required
               />
-              <p class="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
+              <p className="mt-2 invisible peer-invalid:visible text-pink-600 text-sm">
                 *Required Valid Email
               </p>
             </div>
@@ -72,21 +100,22 @@ const Login = () => {
                 required
               />
               <button
-                className="absolute top-[52%] right-2"
+                className="absolute top-[53%] right-2"
                 onClick={handleShowPassword}
+                type="button"
               >
                 {" "}
                 {passwordShow ? (
-                  <FaRegEye size={20} />
+                  <FaRegEye size={18} />
                 ) : (
-                  <FaRegEyeSlash size={20} />
+                  <FaRegEyeSlash size={18} />
                 )}
               </button>
             </div>
 
-            <div className="w-full text-right p-2 ">
-              {/* <button style = {gradientStyle} className = "hover:bg-red-50" type="submit">Sign Up</button> */}
-              <Link className = " bg-purple-300 p-2 rounded-full hover:bg-purple-500 hover:text-white" to="/">Sign in</Link>
+            <div className="text-right pt-2 ">
+              <button className = " bg-purple-300 p-2 rounded-full hover:bg-purple-500 hover:text-white" type="submit">Sign In</button>
+              
             </div>
             <div className="text-[0.75rem]">
               {" "}

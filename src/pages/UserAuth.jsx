@@ -5,7 +5,6 @@ import SignUp from "../components/SignUp";
 
 const UserAuth = () => {
 const {useReg} = useParams()
-console.log(useReg)
 
   return (
     <>

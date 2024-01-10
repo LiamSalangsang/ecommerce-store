@@ -1,5 +1,6 @@
-import React from "react";
 import { NavLink } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+
 
 
 const NavBar = () => {
@@ -27,12 +28,6 @@ const NavBar = () => {
           to="/about"
         >
           About
-        </NavLink>
-        <NavLink
-          className={({isActive})=>isActive?("hover:text-purple-700 duration-100 ease-in md:text-xl md:font-[600] text-purple-700"):("hover:text-purple-700 duration-100  ease-in md:text-xl md:font-[600]")}
-          to="/userauth/signin"
-        >
-          Sign In
         </NavLink>
       </nav>
     </>

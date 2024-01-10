@@ -18,26 +18,26 @@ export default function BreadCrumbs({thisItem}) {
   }
 
   return (
-    <div role="presentation" onClick={handleClick}>
-      <Breadcrumbs separator="›" aria-label="breadcrumb">
-      <Link underline="hover" name = "/products" color="inherit" >
-          All Products
-        </Link>
-        <Link underline="hover" name = "/discover" color="inherit" >
-         Categories
-        </Link>
-        <Link underline="hover" name = {`/${thisCategoryForItem.id}`} color="inherit" >
-          {thisCategoryForItem.name}
-        </Link>
-        <Link
-          underline="hover"
-          color="inherit"
-          className='cursor-pointer'
-          name = {`/${thisItem.id}`
-          }
-        >
-          {thisItem.name}
-        </Link>
+    <div  role="presentation" onClick={handleClick}>
+      <Breadcrumbs  separator="›" aria-label="breadcrumb">
+        <Link  underline="hover" name = "/products" color="inherit" >
+            All Products
+          </Link>
+          <Link underline="hover" name = "/discover" color="inherit" >
+           Categories
+          </Link>
+          <Link underline="hover" name = {`/${thisCategoryForItem.id}`} color="inherit" >
+            {thisCategoryForItem.name}
+          </Link>
+          <Link
+            underline="hover"
+            color="inherit"
+            className='cursor-pointer'
+            name = {`/${thisItem.id}`
+            }
+          >
+            {thisItem.name}
+          </Link>
       </Breadcrumbs>
     </div>
   );

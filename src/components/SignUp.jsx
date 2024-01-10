@@ -1,6 +1,9 @@
 import React, { useState,} from "react";
 import { FaRegEye, FaRegEyeSlash } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import toast from "react-hot-toast";
+import { Toaster } from "react-hot-toast";
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -16,9 +19,24 @@ const SignUp = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-  };
+    handleRegister()
+    };
 
+  async function handleRegister(){
+  
+
+  try {
+    await axios.post('http://localhost:3000/auth/signup', 
+    formData
+    , {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded'
+      }
+  })
+  } catch (error) {
+    toast.error('Account with that Email has already been created')
+  }
+  }
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({ ...prevData, [name]: value }));
@@ -26,7 +44,7 @@ const SignUp = () => {
 
   return (
     <>
-
+  <Toaster/>
       <div className="flex">
         <section className="w-[100%] md:w-[65%] flex flex-col gap-4 justify-center h-[100vh] items-center ">
       <span className=" text-center text-4xl font-bold ">
@@ -85,8 +103,7 @@ const SignUp = () => {
             </div>
 
             <div className="w-full text-right p-2">
-              {/* <button style = {gradientStyle} className = "hover:bg-red-50" type="submit">Sign Up</button> */}
-              <Link className = " bg-purple-300 p-2 rounded-full hover:bg-purple-500 hover:text-white" to="/">Sign Up</Link>
+            <button className = " bg-purple-300 p-2 rounded-full hover:bg-purple-500 hover:text-white" type="submit">Sign Up</button>
             </div>
             <div className="text-[0.75rem]">
               {" "}

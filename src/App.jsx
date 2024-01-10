@@ -5,6 +5,7 @@ import { ThemeProvider, createTheme } from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import { productsContext, searchContext } from "./components/context";
 import { fetchProducts, fetchCategories } from "./data/services";
+import axios from "axios";
 
 const darkTheme = createTheme({
   palette: {

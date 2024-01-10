@@ -69,6 +69,7 @@ const Home = () => {
                   <Marquee speed = {65} pauseOnHover={true}>
                     {dealProducts.map((item) => (
                       <div
+                      key = {item.id}
                       className="w-full"
                       >
                         <ProductCard key={item.id} item={item} deal={item.deals} />

@@ -23,9 +23,9 @@ const Header = () => {
 
       <NavBar />
       <div className="flex items-center">
-        <NavLink
+         <NavLink
           className="group/profile hover:text-purple-700 duration-100 ease-in "
-          to="/profile"
+          to={localStorage.getItem('token')?`/profile`:'/userauth/signin'}
         >
           <CgProfile
             className={`group-hover/profile:text-purple-700 ease-in text-[1.75rem] ${
@@ -33,7 +33,6 @@ const Header = () => {
             }`}
           />
         </NavLink>
-
         <NavLink className={`group/cart p-4 pr-8`} to="/shopcart">
           <FaCartShopping
             className={`group-hover/cart:text-purple-700 duration-100 ease-in text-[1.75rem] ${
